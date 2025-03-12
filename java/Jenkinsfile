@@ -15,6 +15,8 @@ pipeline {
     stage('unit test') {
       steps {
         container('maven') {
+          sh 'printenv'
+          sh 'echo "$REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:$TAG_NAME"'
           sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
         }
 
@@ -36,11 +38,10 @@ pipeline {
       }
     }
 
-    stage('push latest') {
-      agent none
+    stage('push tag') {
       steps {
         container('maven') {
-          sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:$TAG_NAME '
+          sh 'docker tag  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER     $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:$TAG_NAME '
           sh 'docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:$TAG_NAME '
         }
 
@@ -86,9 +87,9 @@ pipeline {
     REGISTRY = 'docker.io'
     DOCKERHUB_NAMESPACE = 'gangkui2008'
     APP_NAME = 'anything'
-    TAG_NAME = "${params.TAG_NAME}"
+    TAG_NAME = "${params.APP_TAG_NAME}"
   }
   parameters {
-    string(name: 'TAG_NAME', defaultValue: '', description: '')
+    string(name: 'APP_TAG_NAME', defaultValue: '', description: '')
   }
 }
