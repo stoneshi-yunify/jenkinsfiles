@@ -1,0 +1,49 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: kube-root-ca.crt
+  namespace: bbb
+  uid: c1165c97-ae28-44c9-9544-c0604daaac31
+  resourceVersion: '22531'
+  creationTimestamp: '2025-02-28T09:35:10Z'
+  annotations:
+    kubernetes.io/description: >-
+      Contains a CA bundle that can be used to verify the kube-apiserver when
+      using internal endpoints such as the internal service IP or
+      kubernetes.default.svc. No other usage is guaranteed across distributions
+      of Kubernetes clusters.
+  managedFields:
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2025-02-28T09:35:10Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:ca.crt': {}
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubernetes.io/description': {}
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl
+    cm5ldGVzMB4XDTI1MDIyODA1MjU0NloXDTM1MDIyNjA1MjU0NlowFTETMBEGA1UE
+    AxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANfU
+    mxkgFvfv5VgWGAvJw4AnSPSMHXXC02A7OAwUHjnuyjRRQBekqBeAEuKi0J+AvYbc
+    LO1AVCcqd5SiSugPfYxbfvAsWVg/8kI9pW4VmD2OwHRWo6UWgVgP/+fEV4fw4sJs
+    33fQ4LJhQap4EokSbMcz2XDBAwo/CJJByA9zaKMzuVKJ64ZtTPhWlYrfpZaB7dFN
+    TduXqSskYYRqtgfZ73QqXbZOa/jW0PSaZ0poLbYq4L1G1VRByN8do2h9RFe5ouPI
+    sTYKwZyfgjpzOmuLUUuK8nTsFI84i/3x7liMf4XD9JEldXNpKE6juQNmTWLoUnZO
+    +N0w/DstkdvsGN7Co1sCAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB
+    /wQFMAMBAf8wHQYDVR0OBBYEFJqT85JpDnGYpr965l10GtzjIpnCMBUGA1UdEQQO
+    MAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAIAFymYMbNFI88052sQE
+    5JQPrLG1stqAoLetvDJmIWmlZF240MRz0X88sL3gRcDnXG+8gNU4wbI5aP8tP17A
+    8TGOustnCvJS8nZrurZ9Z/bDxXLZfbRxu7prgFzB2tW4TdJGPSuStyWsrdL/8mNg
+    SmytGsj0utvsNZZaeCjblNJlgB0609dQ23HzE4vQG1YI+8uLyJXycBEH0MdVNsWp
+    V2jLb92Zk0Trp0g2OXj3A1wsApAeGal/uc3UyLFD5SxZWSpx0NJbUoFsyqvYvOkX
+    wPpPFgNuRZK4ddWnmdczG7eGHZi7fY2hgWXC/MO9nnts8bgMKzwIN0KxSQK/V1iO
+    xoA=
+    -----END CERTIFICATE-----
