@@ -36,7 +36,7 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 25%
+      maxUnavailable: 50%
       maxSurge: 25%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
