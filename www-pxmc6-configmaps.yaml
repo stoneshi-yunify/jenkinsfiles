@@ -1,0 +1,19 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: www-pxmc6
+  ownerReferences:
+    - apiVersion: devops.kubesphere.io/v1alpha3
+      kind: PipelineRun
+      name: www-pxmc6
+      uid: d75ab952-102b-494f-87a4-c98ade28b2e6
+data:
+  stage: >-
+    [{"displayName":"stage-94j70","durationInMillis":6241,"id":"6","result":"SUCCESS","startTime":"2025-04-01T03:19:14Z","state":"FINISHED","type":"STAGE","restartable":true,"steps":[{"id":"9","displayName":"Shell
+    Script","displayDescription":"echo hello
+    world","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-01T03:19:14Z","durationInMillis":6062},{"id":"12","displayName":"Print
+    Message","displayDescription":"dasd","type":"STEP","result":"SUCCESS","state":"FINISHED","startTime":"2025-04-01T03:19:20Z","durationInMillis":9}]}]
+  status: >-
+    {"causes":[{"_class":"io.jenkins.blueocean.service.embedded.rest.AbstractRunImpl$BlueCauseImpl","shortDescription":"Started
+    by user
+    admin","userId":"admin","userName":"admin"}],"durationInMillis":97527,"enQueueTime":"2025-04-01T03:17:43Z","endTime":"2025-04-01T03:19:20Z","startTime":"2025-04-01T03:17:43Z","estimatedDurationInMillis":97527,"id":"1","organization":"jenkins","pipeline":"www","replayable":true,"result":"SUCCESS","runSummary":"stable","state":"FINISHED","type":"WorkflowRun"}
