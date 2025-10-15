@@ -5,6 +5,7 @@ pipeline {
       agent none
       steps {
         echo 'hello world'
+        echo 'main'
       }
     }
   }
